@@ -27,7 +27,7 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $users=User::whereIn('role_id',[1,2,3,4,5,6])->paginate();
+        $users=User::whereIn('role_id',[1,2])->paginate();
         return view('settings.adminusers.index',compact('users'));
     }
 

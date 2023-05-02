@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::where(company())->whereNot('id',currentUserId())->get();
+        $users=User::where(company())->whereIn('id',[2,3,4,5,6])->get();
         return view('settings.users.index',compact('users'));
     }
 
@@ -98,7 +98,7 @@ class UserController extends Controller
     {
         if(currentUser() == 'owner'){
             $branches=Branch::where(company())->get();
-            $roles=Role::whereIn('id',[3,4])->get();
+            $roles=Role::whereIn('id',[3,4,5,6])->get();
         }else{
             $branches=Branch::where(company())->get();
             $roles=Role::whereIn('id',[4])->get();
