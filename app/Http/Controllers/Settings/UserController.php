@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::where(company())->whereIn('id',[2,3,4,5,6])->get();
+        $users=User::where(company())->whereIn('id',[3,4,5,6])->get();
         return view('settings.users.index',compact('users'));
     }
 
