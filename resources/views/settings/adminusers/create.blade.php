@@ -17,7 +17,7 @@
                             <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.admin.store')}}">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="userName">{{__('Name')}}<span class="text-danger">*</span></label>
                                             <input type="text" id="userName" class="form-control" value="{{ old('userName')}}" name="userName">
@@ -27,7 +27,7 @@
                                         </div>
                                     </div>
                                 
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="userEmail">{{__('Email')}}</label>
                                             <input type="text" id="userEmail" class="form-control" value="{{ old('userEmail')}}" name="userEmail">
@@ -36,7 +36,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="contactNumber">{{__('Contact Number')}}<span class="text-danger">*</span></label>
                                             <input type="text" id="contactNumber" class="form-control" value="{{ old('contactNumber')}}" name="contactNumber">
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                  
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="password">{{__('Password')}}<span class="text-danger">*</span></label>
                                             <input type="password" id="password" class="form-control" name="password">
@@ -55,7 +55,7 @@
                                                 @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="image">{{__('Image')}}</label>
                                             <input type="file" id="image" class="form-control"
