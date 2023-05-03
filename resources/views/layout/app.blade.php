@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     
 <link rel="stylesheet" href="{{ asset('assets/css/shared/iconly.css') }}">
+{{-- tostr css --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 <script
   src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -96,11 +99,11 @@
                 <div class="container">
                     <div class="footer clearfix mb-0 text-muted">
                         <div class="float-start">
-                            <p>2022 &copy; POS</p>
+                            <p>2022 &copy; Unilever</p>
                         </div>
                         <div class="float-end">
                             <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="#">Nasim</a></p>
+                                href="#">Muktodhara Technology LTD</a></p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +112,10 @@
     </div>
 <script src="{{ asset('/assets/js/bootstrap.js') }}"></script>
 <script src="{{ asset('/assets/js/app.js') }}"></script>
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 @stack('scripts')
+
+
 
 </body>
 

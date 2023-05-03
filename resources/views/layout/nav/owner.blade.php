@@ -46,4 +46,12 @@
 		</ul>
         
     </li>
+    <li class="sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-calculator"></i><span>{{__('Outlet')}}</span>
+        </a>
+        <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.outlet.index')}}" >{{__('Outlet list')}}</a></li>
+		</ul>
+        
+    </li>
 </ul>
