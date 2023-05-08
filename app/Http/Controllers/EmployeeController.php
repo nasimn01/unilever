@@ -63,7 +63,7 @@ class EmployeeController extends Controller
 
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
 
         }
@@ -124,7 +124,7 @@ class EmployeeController extends Controller
 
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
 
         }
