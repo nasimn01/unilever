@@ -8,10 +8,10 @@
        <div class="col-md-3 col-sm-6 col-lg-3">
             <div class="info-box">
                 <span class="info-box-icon bg-aqua">
-                <i class="bi bi-bag icon"></i>
+                <i class="bi bi-boxes icon"></i>
                 </span>
                 <div class="info-box-content">
-                    <span class="text-bold text-uppercase">Total Purchase Due</span>
+                    <span class="text-bold text-uppercase">Total Stock</span>
                     <span class="info-box-number">৳  0.00</span>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <i class="bi bi-currency-dollar icon"></i>
                 </span>
                 <div class="info-box-content">
-                    <span class="text-bold text-uppercase">Total Sales Due</span>
+                    <span class="text-bold text-uppercase">Total Collection</span>
                     <span class="info-box-number">৳  0.00</span>
                 </div>
             </div>
@@ -54,10 +54,10 @@
        <div class="col-md-3 col-sm-6 col-lg-3">
             <div class="info-box">
                 <span class="info-box-icon bg-aqua">
-                <i class="bi bi-bag icon"></i>
+                <i class="bi bi-boxes icon"></i>
                 </span>
                 <div class="info-box-content">
-                    <span class="text-bold text-uppercase">Todays Total Purchase</span>
+                    <span class="text-bold text-uppercase">Todays Stock Out</span>
                     <span class="info-box-number">৳  0.00</span>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <i class="bi bi-currency-dollar icon"></i>
                 </span>
                 <div class="info-box-content">
-                    <span class="text-bold text-uppercase">Today Payment Received(Sales)</span>
+                    <span class="text-bold text-uppercase">Collection Due</span>
                     <span class="info-box-number">৳  0.00</span>
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="small-box bg-dream-pink">
                <div class="inner text-uppercase">
                     <h3>138</h3>
-                    <p>Customers</p>
+                    <p>Suppliers</p>
                </div> 
                <div class="icon">
                 <i class="bi bi-people-fill"></i>
@@ -115,10 +115,10 @@
             <div class="small-box bg-dream-purple">
                <div class="inner text-uppercase">
                     <h3>18</h3>
-                    <p>Suppliers</p>
+                    <p>Outlets</p>
                </div> 
                <div class="icon">
-                <i class="bi bi-people-fill"></i>
+                <i class="bi bi-shop"></i>
                </div>
                <a href="#" class="small-box-footer text-uppercase">View
                 <i class="bi bi-arrow-right-circle"></i>
@@ -129,7 +129,7 @@
             <div class="small-box bg-dream-maroon">
                <div class="inner text-uppercase">
                     <h3>18</h3>
-                    <p>Purchase Invoice</p>
+                    <p>Invoice</p>
                </div> 
                <div class="icon">
                 <i class="bi bi-receipt"></i>
@@ -143,7 +143,7 @@
             <div class="small-box bg-dream-green">
                <div class="inner text-uppercase">
                     <h3>198</h3>
-                    <p>Sales Invoice</p>
+                    <p>Memu</p>
                </div> 
                <div class="icon">
                 <i class="bi bi-receipt"></i>

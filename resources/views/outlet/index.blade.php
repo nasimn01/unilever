@@ -27,7 +27,7 @@
                                     <th scope="col">{{__('Channel')}}</th>
                                     <th scope="col">{{__('Region')}}</th>
                                     <th scope="col">{{__('Town')}}</th>
-                                    <th scope="col">{{__('Distributor Code')}}</th>
+                                    {{-- <th scope="col">{{__('Distributor Code')}}</th> --}}
                                     <th scope="col">{{__('Route Code')}}</th>
                                     <th scope="col">{{__('Route Name')}}</th>
                                     <th scope="col">{{__('Outlet Creation Date')}}</th>
@@ -52,7 +52,7 @@
                                     <td>{{$p->channel}}</td>
                                     <td>{{$p->region}}</td>
                                     <td>{{$p->town}}</td>
-                                    <td>{{$p->distributor_code}}</td>
+                                    {{-- <td>{{$p->distributor_code}}</td> --}}
                                     <td>{{$p->route_code}}</td>
                                     <td>{{$p->route_name}}</td>
                                     <td>{{$p->outlet_create_date}}</td>

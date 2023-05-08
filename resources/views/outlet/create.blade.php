@@ -103,12 +103,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="distributor_code">{{__('Distribute Code')}}</label>
                                             <input type="text" class="form-control" value="{{ old('distributor_code')}}" name="distributor_code">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="route_code">{{__('Route Code')}}</label>
