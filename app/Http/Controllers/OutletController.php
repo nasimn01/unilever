@@ -73,7 +73,7 @@ class OutletController extends Controller
 
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
 
         }
@@ -142,7 +142,7 @@ class OutletController extends Controller
 
         }
         catch (Exception $e){
-            dd($e);
+            // dd($e);
             return back()->withInput();
 
         }

@@ -13,6 +13,7 @@ use App\Http\Controllers\Settings\Location\UpazilaController as upazila;
 use App\Http\Controllers\Settings\Location\ThanaController as thana;
 use App\Http\Controllers\Products\UnitController as unit;
 use App\Http\Controllers\OutletController as outlet;
+use App\Http\Controllers\EmployeeController as employee;
 use App\Http\Controllers\Currency\CurrencyController as currency;
 
 
@@ -81,6 +82,7 @@ Route::group(['middleware'=>isOwner::class],function(){
         Route::resource('company',company::class,['as'=>'owner']);
         Route::resource('users',user::class,['as'=>'owner']);
         Route::resource('outlet',outlet::class,['as'=>'owner']);
+        Route::resource('employee',employee::class,['as'=>'owner']);
 
         
 

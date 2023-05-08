@@ -58,7 +58,7 @@
                                     <td>{{$p->outlet_create_date}}</td>
                                     <td>{{$p->frequency}}</td>
                                     <td>{{$p->sales_officer}}</td>
-                                    <td>{{$p->status}}</td>
+                                    <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
                                     
                                     <td class="white-space-nowrap">
                                         <a href="{{route(currentUser().'.outlet.edit',encryptor('encrypt',$p->id))}}">
