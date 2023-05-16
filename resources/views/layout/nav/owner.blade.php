@@ -63,7 +63,7 @@
         
     </li>
     <li class="sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-person-bounding-box"></i><span>{{__('Employee Leave')}}</span>
+        <a href="#" class='sidebar-link'><i class="bi bi-file-earmark-fill"></i><span>{{__('Employee Leave')}}</span>
         </a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.emLeave.index')}}" >{{__('Employee Leave list')}}</a></li>
@@ -71,7 +71,7 @@
         
     </li>
     <li class="sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-person-bounding-box"></i><span>{{__('Memu')}}</span>
+        <a href="#" class='sidebar-link'><i class="bi bi-receipt"></i><span>{{__('Memu')}}</span>
         </a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.memu.index')}}" >{{__('Memu list')}}</a></li>

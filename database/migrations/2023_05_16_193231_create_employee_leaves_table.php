@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('leave_date_start')->nullable();
             $table->string('leave_date_end')->nullable();
             $table->string('leave_reason')->nullable();
-            $table->string('application_details')->nullable();
+            $table->text('application_details')->nullable();
             $table->string('application_image')->nullable();
             $table->string('approve_by');
             $table->timestamps();

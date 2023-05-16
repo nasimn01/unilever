@@ -4,11 +4,6 @@
 @section('pageSubTitle',trans('Create'))
 
 @section('content')
-<style>
-    .hidden {
-        display: none;
-    }
-</style>
   <!-- // Basic multiple Column Form section start -->
     <section id="multiple-column-form">
         <div class="row match-height">
@@ -56,7 +51,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="details">{{__('Application Details')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('application_details')}}" name="application_details">
+                                            <textarea class="form-control" name="application_details" rows="2">{{ old('application_details')}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -81,32 +76,3 @@
         </div>
     </section>
 @endsection
-@push('scripts')
-<script>
-    function calculateDueAmount() {
-      const totalAmount = parseFloat(document.getElementById('total_amount').value);
-      const paidAmount = parseFloat(document.getElementById('paid_amount').value);
-      const dueDiv = document.getElementById('due_div');
-      
-      if (totalAmount === paidAmount) {
-        dueDiv.classList.add('hidden');
-      } else {
-        dueDiv.classList.remove('hidden');
-        const dueAmount = totalAmount - paidAmount;
-        document.getElementById('due_amount').value = dueAmount.toFixed(2);
-      }
-    }
-
-    function checkPaidAmount() {
-      const totalAmount = parseFloat(document.getElementById('total_amount').value);
-      const paidAmount = parseFloat(document.getElementById('paid_amount').value);
-      
-      if (paidAmount > totalAmount) {
-        alert('Paid amount cannot be greater than total amount!');
-        document.getElementById('paid_amount').value = totalAmount.toFixed(2);
-      }
-      
-      calculateDueAmount();
-    }
-</script>
-@endpush

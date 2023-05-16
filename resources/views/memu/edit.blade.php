@@ -36,15 +36,15 @@
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="jso">{{__('JSO ID')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('jso_id',$mdata->jso_id)}}" name="jso_id">
+                                            <label for="jso">{{__('JSO ID')}}<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" value="{{ old('jso_id',$mdata->jso_id)}}" name="jso_id" required>
                                             
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="sr">{{__('SR ID')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('sr_id',$mdata->sr_id)}}" name="sr_id">
+                                            <label for="sr">{{__('SR ID')}}<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" value="{{ old('sr_id',$mdata->sr_id)}}" name="sr_id" required>
                                             
                                         </div>
                                     </div>
@@ -62,8 +62,8 @@
                                             
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12" id="due_div">
-                                        <div class="form-group">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group" id="due_div">
                                             <label for="amount">{{__('Due Amount')}}</label>
                                             <input type="number" class="form-control" id="due_amount" value="{{ old('due_amount',$mdata->due_amount)}}" name="due_amount" readonly>
                                             
