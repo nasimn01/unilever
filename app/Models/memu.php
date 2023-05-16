@@ -9,4 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class memu extends Model
 {
     use HasFactory,SoftDeletes;
+    public function outlet(){
+        return $this->belongsTo(outlet::class,'outlet_id','id');
+    }
 }

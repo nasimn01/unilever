@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('memus', function (Blueprint $table) {
             $table->id();
-            $table->string('outlet_id');
+            $table->bigInteger('outlet_id');
             $table->string('jso_id')->nullable();
             $table->string('sr_id')->nullable();
-            $table->string('total_amount')->nullable();
-            $table->string('paid_amount')->nullable();
-            $table->string('due_amount')->nullable();
+            $table->decimal('total_amount',10,2)->nullable();
+            $table->decimal('paid_amount',10,2)->nullable();
+            $table->decimal('due_amount',10,2)->nullable();
             $table->string('memu_date')->nullable();
             $table->string('next_due_collection_date')->nullable();
             $table->timestamps();

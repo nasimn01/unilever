@@ -47,7 +47,7 @@
         
     </li>
     <li class="sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-calculator"></i><span>{{__('Outlet')}}</span>
+        <a href="#" class='sidebar-link'><i class="bi bi-shop"></i><span>{{__('Outlet')}}</span>
         </a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.outlet.index')}}" >{{__('Outlet list')}}</a></li>
@@ -55,10 +55,18 @@
         
     </li>
     <li class="sidebar-item has-sub">
-        <a href="#" class='sidebar-link'><i class="bi bi-calculator"></i><span>{{__('Employee')}}</span>
+        <a href="#" class='sidebar-link'><i class="bi bi-person-bounding-box"></i><span>{{__('Employee')}}</span>
         </a>
         <ul class="submenu">
             <li class="py-1"><a href="{{route(currentUser().'.employee.index')}}" >{{__('Employee list')}}</a></li>
+		</ul>
+        
+    </li>
+    <li class="sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-person-bounding-box"></i><span>{{__('Memu')}}</span>
+        </a>
+        <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.memu.index')}}" >{{__('Memu list')}}</a></li>
 		</ul>
         
     </li>

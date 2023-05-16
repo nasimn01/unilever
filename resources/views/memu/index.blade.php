@@ -16,15 +16,14 @@
                             <thead>
                                 <tr>
                                     <th scope="col">{{__('#SL')}}</th>
-                                    <th scope="col">{{__('Employee Code')}}</th>
-                                    <th scope="col">{{__('Designation')}}</th>
-                                    <th scope="col">{{__('Name')}}</th>
-                                    <th scope="col">{{__('Father Name')}}</th>
-                                    <th scope="col">{{__('Mother Name')}}</th>
-                                    <th scope="col">{{__('Contact')}}</th>
-                                    <th scope="col">{{__('Area')}}</th>
-                                    <th scope="col">{{__('Address')}}</th>
-                                    <th scope="col">{{__('Status')}}</th>
+                                    <th scope="col">{{__('Outlet')}}</th>
+                                    <th scope="col">{{__('JSO ID')}}</th>
+                                    <th scope="col">{{__('SR ID')}}</th>
+                                    <th scope="col">{{__('Total Amount')}}</th>
+                                    <th scope="col">{{__('Paid Amount')}}</th>
+                                    <th scope="col">{{__('Due Amount')}}</th>
+                                    <th scope="col">{{__('Memu Date')}}</th>
+                                    <th scope="col">{{__('Next-Due Collection-Date')}}</th>
                                     <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                 </tr>
                             </thead>
@@ -32,24 +31,22 @@
                                 @forelse($data as $p)
                                 <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                    <td>{{$p->employee_code}}</td>
-                                    <td>{{$p->designa?->designation}}</td>
-                                    <td>{{$p->name}}</td>
-                                    <td>{{$p->father_name}}</td>
-                                    <td>{{$p->mother_name}}</td>
-                                    <td>{{$p->contact}}</td>
-                                    <td>{{$p->area}}</td>
-                                    <td>{{$p->permanent_address}}</td>
-                                    <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
-
+                                    <td>{{$p->outlet?->name}}</td>
+                                    <td>{{$p->jso_id}}</td>
+                                    <td>{{$p->sr_id}}</td>
+                                    <td>{{$p->total_amount}}</td>
+                                    <td>{{$p->paid_amount}}</td>
+                                    <td>{{$p->due_amount}}</td>
+                                    <td>{{$p->memu_date}}</td>
+                                    <td>{{$p->next_due_collection_date}}</td>
                                     <td class="white-space-nowrap">
-                                        <a href="{{route(currentUser().'.employee.edit',encryptor('encrypt',$p->id))}}">
+                                        <a href="{{route(currentUser().'.memu.edit',encryptor('encrypt',$p->id))}}">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                             <i class="bi bi-trash"></i>
                                         </a>
-                                        <form id="form{{$p->id}}" action="{{route(currentUser().'.employee.destroy',encryptor('encrypt',$p->id))}}" method="post">
+                                        <form id="form{{$p->id}}" action="{{route(currentUser().'.memu.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                             @csrf
                                             @method('delete')
                                             
@@ -58,7 +55,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <th colspan="11" class="text-center">No Data Found</th>
+                                    <th colspan="10" class="text-center">No Data Found</th>
                                 </tr>
                                 @endforelse
                             </tbody>

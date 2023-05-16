@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\memu;
+use App\Models\outlet;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
@@ -28,7 +29,8 @@ class MemuController extends Controller
      */
     public function create()
     {
-        return view('memu.create');
+        $outlet = outlet::all();
+        return view('memu.create',compact('outlet'));
     }
 
     /**
@@ -85,8 +87,9 @@ class MemuController extends Controller
      */
     public function edit($id)
     {
+        $outlet = outlet::all();
         $mdata = memu::findOrFail(encryptor('decrypt',$id));
-        return view('memu.edit',compact('designation','mdata'));
+        return view('memu.edit',compact('outlet','mdata'));
     }
 
     /**
