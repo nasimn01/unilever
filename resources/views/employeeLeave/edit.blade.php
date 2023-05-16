@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Update Memu'))
+@section('pageTitle',trans('Update Employee leave'))
 @section('pageSubTitle',trans('update'))
 
 @section('content')
@@ -16,18 +16,17 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post" action="{{route(currentUser().'.memu.update',encryptor('encrypt',$mdata->id))}}">
+                            <form class="form" method="post" enctype="multipart/form-data" action="{{route(currentUser().'.emLeave.update',encryptor('encrypt',$emdata->id))}}">
                                 @csrf
                                 @method('PATCH')
                                 <div class="row">
-                                   
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="designation">{{__('Outlet')}}<span class="text-danger">*</span></label>
-                                            <select required name="outlet_id" class="form-control form-select" >
+                                            <label for="designation">{{__('Employee')}}<span class="text-danger">*</span></label>
+                                            <select required name="employee_id" class="form-control form-select" >
                                                 <option value="">Select</option>
-                                                @forelse($outlet as $d)
-                                                    <option value="{{$d->id}}" {{ old('outlet_id',$mdata->outlet_id)==$d->id?"selected":""}}> {{ $d->name}}</option>
+                                                @forelse($employee as $d)
+                                                    <option value="{{$d->id}}" {{ old('employee_id',$emdata->employee_id)==$d->id?"selected":""}}> {{ $d->name}}</option>
                                                 @empty
                                                     <option value="">No data found</option>
                                                 @endforelse
@@ -36,51 +35,35 @@
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="jso">{{__('JSO ID')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('jso_id',$mdata->jso_id)}}" name="jso_id">
+                                            <label for="date">{{__('Leave Date Start')}}</label>
+                                            <input type="date" class="form-control" value="{{ old('leave_date_start',$emdata->leave_date_start)}}" name="leave_date_start">
                                             
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="sr">{{__('SR ID')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('sr_id',$mdata->sr_id)}}" name="sr_id">
+                                            <label for="date">{{__('Leave Date End')}}</label>
+                                            <input type="date" class="form-control" value="{{ old('leave_date_end',$emdata->leave_date_end)}}" name="leave_date_end">
                                             
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="reason">{{__('Leave Reason')}}</label>
+                                            <input type="text" class="form-control" value="{{ old('leave_reason',$emdata->leave_reason)}}" name="leave_reason">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="amount">{{__('Total Amount')}}</label>
-                                            <input type="number" class="form-control" value="{{ old('total_amount',$mdata->total_amount)}}" name="total_amount" id="total_amount" oninput="calculateDueAmount()">
-                                            
+                                            <label for="details">{{__('Application Details')}}</label>
+                                            <input type="text" class="form-control" value="{{ old('application_details',$emdata->application_details)}}" name="application_details">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="amount">{{__('Paid Amount')}}</label>
-                                            <input type="number" class="form-control" value="{{ old('paid_amount',$mdata->paid_amount)}}" name="paid_amount" id="paid_amount" oninput="checkPaidAmount()">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12" id="due_div">
-                                        <div class="form-group">
-                                            <label for="amount">{{__('Due Amount')}}</label>
-                                            <input type="number" class="form-control" id="due_amount" value="{{ old('due_amount',$mdata->due_amount)}}" name="due_amount" readonly>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="date">{{__('Memu Date')}}</label>
-                                            <input type="date" class="form-control" value="{{ old('memu_date',$mdata->memu_date)}}" name="memu_date">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <label for="date">{{__('Next-Due Collection Date')}}</label>
-                                            <input type="date" class="form-control" value="{{ old('next_due_collection_date',$mdata->next_due_collection_date)}}" name="next_due_collection_date">
-                                            
+                                            <label for="img">{{__('Application Image')}}</label>
+                                            <input type="file" class="form-control" name="application_image">
                                         </div>
                                     </div>
                                 </div>

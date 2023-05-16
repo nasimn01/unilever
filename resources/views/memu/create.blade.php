@@ -125,5 +125,5 @@
       
       calculateDueAmount();
     }
-  </script>
+</script>
 @endpush
