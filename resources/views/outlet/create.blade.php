@@ -109,26 +109,26 @@
                                             <input type="text" class="form-control" value="{{ old('distributor_code')}}" name="distributor_code">
                                         </div>
                                     </div> --}}
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    {{-- <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="route_code">{{__('Route Code')}}</label>
                                             <select class="form-control form-select" name="route_code">
                                                 <option value="">Select Route Code</option>
                                                 @forelse($route as $d)
-                                                    <option value="{{$d->id}}" {{ old('route_code')==$d->id?"selected":""}}> {{ $d->route_code}}</option>
+                                                    <option value="{{$d->id}}" {{ old('route_code')==$d->id?"selected":""}}> {{ $d->route_code}} {{ $d->route_name}}</option>
                                                 @empty
                                                     <option value="">No data found</option>
                                                 @endforelse
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label for="route_name">{{__('Route Name')}}</label>
+                                            <label for="route_name">{{__('Route Name & Code')}}</label>
                                             <select class="form-control form-select" name="route_name">
-                                                <option value="">Select Route Name</option>
+                                                <option value="">Select Route</option>
                                                 @forelse($route as $d)
-                                                    <option value="{{$d->id}}" {{ old('route_name')==$d->id?"selected":""}}> {{ $d->route_name}}</option>
+                                                    <option value="{{$d->id}}" {{ old('route_name')==$d->id?"selected":""}}> {{ $d->route_name}}({{ $d->route_code}})</option>
                                                 @empty
                                                     <option value="">No data found</option>
                                                 @endforelse
