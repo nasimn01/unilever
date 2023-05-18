@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\outlet;
+use App\Models\route;
 use App\Models\Settings\Location\District;
 use App\Models\Settings\Location\Upazila;
 use Illuminate\Http\Request;
@@ -31,9 +32,10 @@ class OutletController extends Controller
      */
     public function create()
     {
+        $route = route::all();
         $district = District::all();
         $upazila = Upazila::all();
-        return view('outlet.create',compact('district','upazila'));
+        return view('outlet.create',compact('district','upazila','route'));
     }
 
     /**
@@ -98,10 +100,11 @@ class OutletController extends Controller
      */
     public function edit($id)
     {
+        $route = route::all();
         $district = District::all();
         $upazila = Upazila::all();
         $outlet = outlet::findOrFail(encryptor('decrypt',$id));
-        return view('outlet.edit',compact('district','upazila','outlet'));
+        return view('outlet.edit',compact('district','upazila','outlet','route'));
     }
 
     /**

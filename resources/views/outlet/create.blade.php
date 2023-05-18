@@ -112,13 +112,27 @@
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="route_code">{{__('Route Code')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('route_code')}}" name="route_code">
+                                            <select class="form-control form-select" name="town">
+                                                <option value="">Select Route Code</option>
+                                                @forelse($route as $d)
+                                                    <option value="{{$d->id}}" {{ old('route_code')==$d->id?"selected":""}}> {{ $d->route_code}}</option>
+                                                @empty
+                                                    <option value="">No data found</option>
+                                                @endforelse
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="route_name">{{__('Route Name')}}</label>
-                                            <input type="text" class="form-control" value="{{ old('route_name')}}" name="route_name">
+                                            <select class="form-control form-select" name="town">
+                                                <option value="">Select Route Name</option>
+                                                @forelse($route as $d)
+                                                    <option value="{{$d->id}}" {{ old('route_name')==$d->id?"selected":""}}> {{ $d->route_name}}</option>
+                                                @empty
+                                                    <option value="">No data found</option>
+                                                @endforelse
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
