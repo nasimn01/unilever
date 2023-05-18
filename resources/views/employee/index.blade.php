@@ -64,6 +64,9 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="my-3">
+                        {!! $data->links()!!}
+                    </div>
                 </div>
             </div>
     </div>

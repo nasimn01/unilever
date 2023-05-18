@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Child One List'))
+@section('pageTitle',trans('Route List'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -12,33 +12,29 @@
                     <!-- table bordered -->
                     <div class="table-responsive">
                         <table class="table table-bordered mb-0">
-                            <a class="float-end" href="{{route(currentUser().'.child_one.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
+                            <a class="float-end" href="{{route(currentUser().'.uroute.create')}}"style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
                             <thead>
                                 <tr>
                                     <th scope="col">{{__('#SL')}}</th>
-                                    <th scope="col">{{__('Sub Head')}}</th>
-                                    <th scope="col">{{__('Child One')}}</th>
-                                   
-                                    <th scope="col">{{__('Opening Balance')}}</th>
+                                    <th scope="col">{{__('Route Code')}}</th>
+                                    <th scope="col">{{__('Route Name')}}</th>
                                     <th class="white-space-nowrap">{{__('ACTION')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($data as $d)
+                                @forelse($data as $p)
                                 <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                    <td>{{$d->sub_head?->head_name}} - {{$d->sub_head?->head_code}}</td>
-                                    <td>{{$d->head_name}} - {{$d->head_code}}</td>
-                                   
-                                    <td>{{$d->opening_balance}}</td>
+                                    <td>{{$p->route_code}}</td>
+                                    <td>{{$p->route_name}}</td>
                                     <td class="white-space-nowrap">
-                                        <a href="{{route(currentUser().'.child_one.edit',encryptor('encrypt',$d->id))}}">
+                                        <a href="{{route(currentUser().'.uroute.edit',encryptor('encrypt',$p->id))}}">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        <a href="javascript:void()" onclick="$('#form{{$d->id}}').submit()">
+                                        <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                                             <i class="bi bi-trash"></i>
                                         </a>
-                                        <form id="form{{$d->id}}" action="{{route(currentUser().'.child_one.destroy',encryptor('encrypt',$d->id))}}" method="post">
+                                        <form id="form{{$p->id}}" action="{{route(currentUser().'.uroute.destroy',encryptor('encrypt',$p->id))}}" method="post">
                                             @csrf
                                             @method('delete')
                                             
@@ -47,20 +43,18 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <th colspan="5" class="text-center">No data Found</th>
+                                    <th colspan="4" class="text-center">No Data Found</th>
                                 </tr>
                                 @endforelse
                             </tbody>
                         </table>
-                        <div class="my-3">
-                            {!! $data->links()!!}
-                        </div>
+                    </div>
+                    <div class="my-3">
+                        {!! $data->links()!!}
                     </div>
                 </div>
             </div>
     </div>
 </section>
-<!-- Bordered table end -->
-
 
 @endsection

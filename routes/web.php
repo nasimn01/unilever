@@ -16,6 +16,7 @@ use App\Http\Controllers\OutletController as outlet;
 use App\Http\Controllers\EmployeeController as employee;
 use App\Http\Controllers\EmployeeLeaveController as emLeave;
 use App\Http\Controllers\MemuController as memu;
+use App\Http\Controllers\RouteController as uroute;
 use App\Http\Controllers\Currency\CurrencyController as currency;
 
 
@@ -87,6 +88,7 @@ Route::group(['middleware'=>isOwner::class],function(){
         Route::resource('employee',employee::class,['as'=>'owner']);
         Route::resource('emLeave',emLeave::class,['as'=>'owner']);
         Route::resource('memu',memu::class,['as'=>'owner']);
+        Route::resource('uroute',uroute::class,['as'=>'owner']);
 
         
 

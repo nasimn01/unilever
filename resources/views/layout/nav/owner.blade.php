@@ -78,4 +78,12 @@
 		</ul>
         
     </li>
+    <li class="sidebar-item has-sub">
+        <a href="#" class='sidebar-link'><i class="bi bi-receipt"></i><span>{{__('Route')}}</span>
+        </a>
+        <ul class="submenu">
+            <li class="py-1"><a href="{{route(currentUser().'.uroute.index')}}" >{{__('Route list')}}</a></li>
+		</ul>
+        
+    </li>
 </ul>
