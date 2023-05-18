@@ -53,8 +53,8 @@
                                     <td>{{$p->region}}</td>
                                     <td>{{$p->town}}</td>
                                     {{-- <td>{{$p->distributor_code}}</td> --}}
-                                    <td>{{$p->route_code}}</td>
-                                    <td>{{$p->route_name}}</td>
+                                    <td>{{$p->route?->route_code}}</td>
+                                    <td>{{$p->route?->route_name}}</td>
                                     <td>{{$p->outlet_create_date}}</td>
                                     <td>{{$p->frequency}}</td>
                                     <td>{{$p->sales_officer}}</td>

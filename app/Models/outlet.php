@@ -9,4 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class outlet extends Model
 {
     use HasFactory,SoftDeletes;
+    public function route(){
+        return $this->belongsTo(route::class,'route_name','id');
+    }
 }
